@@ -42,6 +42,8 @@ if v:version == 700 && !has('patch167')
     finish
 endif
 
+let g:loaded_tagbar = 1
+
 function! s:init_var(var, value) abort
     if !exists('g:tagbar_' . a:var)
         execute 'let g:tagbar_' . a:var . ' = ' . string(a:value)
@@ -113,6 +115,8 @@ function! s:setup_options() abort
         \ ['show_data_type', 0],
         \ ['show_visibility', 1],
         \ ['show_linenumbers', 0],
+        \ ['show_prefix', 1],
+        \ ['show_suffix', 1],
         \ ['show_tag_count', 0],
         \ ['show_tag_linenumbers', 0],
         \ ['singleclick', 0],
